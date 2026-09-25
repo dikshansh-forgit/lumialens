@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LuminaLens - Discover high-resolution visual stories and imagery from around the globe.">
+  <title>LuminaLens | Visual Discovery Engine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Sticky Branded Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m14.31 8 5.74 9.94"></path>
+            <path d="M9.69 8h11.48"></path>
+            <path d="m7.38 12 5.74-9.94"></path>
+            <path d="M9.69 16 3.95 6.06"></path>
+            <path d="M14.31 16H2.83"></path>
+            <path d="m16.62 12-5.74 9.94"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">LuminaLens</h1>
+          <p class="brand-tagline">Visual discovery across the globe — search any topic to uncover high-resolution imagery.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero / Guidance Section -->
+    <section class="search-section" aria-labelledby="search-heading">
+      <div class="hero-intro">
+        <h2 id="search-heading" class="hero-title">What would you like to explore today?</h2>
+        <p class="hero-description">Type a theme, location, or concept into the search box below to generate a tailored visual feed.</p>
+      </div>
+
+      <!-- Search Control Form -->
+      <form id="search-form" class="search-form" role="search" onsubmit="return false;">
+        <div class="search-input-wrapper">
+          <label for="search-input" class="visually-hidden">Search for images</label>
+          <span class="search-icon-adornment" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input 
+            type="search" 
+            id="search-input" 
+            name="query" 
+            placeholder="Search mountains, architecture, wildlife, portraits..." 
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button type="button" id="clear-btn" class="clear-button" aria-label="Clear search input">Clear</button>
+        </div>
+        <button type="submit" id="search-btn" class="search-button">
+          <span>Search</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Category / Quick-Pick Suggestion Chips -->
+      <div class="category-section" aria-label="Suggested search categories">
+        <span class="category-label">Popular topics:</span>
+        <div id="category-chips" class="category-chips" role="group" aria-label="Topic suggestions">
+          <button type="button" class="chip" data-topic="Nordic Landscapes">Nordic Landscapes</button>
+          <button type="button" class="chip" data-topic="Modern Architecture">Modern Architecture</button>
+          <button type="button" class="chip" data-topic="Deep Sea Wildlife">Deep Sea Wildlife</button>
+          <button type="button" class="chip" data-topic="Cyberpunk Cityscapes">Cyberpunk Cityscapes</button>
+          <button type="button" class="chip" data-topic="Minimalist Geometry">Minimalist Geometry</button>
+          <button type="button" class="chip" data-topic="Astronomy & Nebulas">Astronomy &amp; Nebulas</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Results Section -->
+    <section class="results-section" aria-label="Search results area">
+      <div class="results-meta-bar">
+        <span id="result-count" class="result-count-placeholder" aria-live="polite">Showing 0 results</span>
+      </div>
+
+      <!-- Empty State Element -->
+      <div id="empty-state" class="empty-state">
+        <div class="empty-state-graphic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+        </div>
+        <h3 class="empty-state-title">Search to see results</h3>
+        <p class="empty-state-subtitle">Enter a query above or click any suggested category to populate your custom image gallery.</p>
+      </div>
+
+      <!-- Empty Target Results Container (strictly empty for Part 2) -->
+      <div id="results" class="results-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>&copy; 2026 LuminaLens Visual Explorer. Designed for clean, responsive photography browsing.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
