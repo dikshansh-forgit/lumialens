@@ -1,0 +1,3 @@
+# LuminaLens
+
+LuminaLens is a fast, responsive image-discovery web application designed to help users explore curated, high-resolution photography from across the globe through intuitive keyword queries. In later parts of this project, it will connect to an image API to dynamically populate an adaptive visual gallery. To distinguish the interface from reference designs, I chose an oceanic deep-slate background accented by electric cyan and teal, paired with a sticky glassmorphic header to maintain persistent brand orientation as users scroll. Additionally, I designed a curated topic-chips bar and an instructive empty-state card to provide visitors with immediate guidance and clear calls-to-action before they even begin typing.
