@@ -377,7 +377,13 @@ body {
   gap: 1.5rem;
   width: 100%;
 }
-
+.image-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 /* Image Card Styles (Pre-scaffolded for Part 2) */
 .image-card {
   background-color: var(--bg-card);
@@ -480,4 +486,99 @@ body {
   #results {
     grid-template-columns: 1fr;
   }
+}
+/* ==========================================================================
+   Status States (Loading, Empty, Error) — Part 3
+   ========================================================================== */
+.status-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin: 1rem 0;
+  transition: all var(--transition-normal);
+}
+
+.empty-state {
+  border-style: dashed;
+  border-width: 2px;
+}
+
+.status-graphic {
+  padding: 1.2rem;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-graphic {
+  color: var(--accent-cyan);
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.error-graphic {
+  color: #f43f5e;
+  background: rgba(244, 63, 94, 0.12);
+}
+
+.status-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.status-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 460px;
+  line-height: 1.5;
+}
+
+/* Loading Spinner Animation */
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(6, 182, 212, 0.15);
+  border-top-color: var(--accent-cyan);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+  margin-bottom: 1.25rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Card Fade-In Animation (Polish) */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.image-card {
+  animation: cardFadeIn 0.35s ease-out forwards;
+}
+
+/* Disabled Search Button State */
+.search-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
